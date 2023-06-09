@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+@keyframes car {
+  0% {
+    transform: translate(-500px, -1000px);
+  }
+
+  10% {
+    transform: translate(-500px, 0px);
+  }
+
+  100% {
+    transform: translate(1500px, 0px);
+  }
+}
+
+@keyframes wheels {
+  0% {
+    transform: rotate(0);
+  }
+
+  5% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* @keyframes translator {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(300px);
+  }
+  75% {
+    transform: translate(-300px);
+  }
+  100% {
+    transform: translate(0);
+  }
+} */
+
+/** ANIMATIONS */
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 700px;
+  margin: 0 auto;
+  outline: 1px solid red;
+}
+
+.block {
+  width: 400px;
+  height: 100px;
+  margin-bottom: 100px;
+  background-color: tomato;
+  color: gray;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  border-radius: 100px 60px 0 0;
+  animation-name: car;
+  animation-duration: 8000ms;
+}
+
+.block::before {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50px;
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    rgba(0, 21, 255, 1) 0%,
+    rgba(220, 57, 184, 1) 25%,
+    rgba(0, 188, 212, 1) 50%,
+    rgba(238, 130, 238, 1) 100%
+  );
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  animation-name: wheels;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.block::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: 50px;
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    rgba(0, 21, 255, 1) 0%,
+    rgba(220, 57, 184, 1) 25%,
+    rgba(0, 188, 212, 1) 50%,
+    rgba(238, 130, 238, 1) 100%
+  );
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  animation-name: wheels;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.top {
+  width: 200px;
+  height: 70px;
+  position: absolute;
+  top: -70px;
+  background-color: orange;
+  left: 50%;
+  transform: translate(-50%);
+
+  border-radius: 20px 70px 0 0;
+}
